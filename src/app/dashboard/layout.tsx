@@ -6,15 +6,14 @@ export default function DashBoardLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="bg-slate-100 w-full h-min-screen antialiased text-slate-300 selection:bg-blue-600 selection:text-white">
+        <div className="flex flex-col-reverse  bg-slate-100 sm:overflow-y-scroll sm:w-screen sm:h-screen ">
 
-            <div className="flex flex-col-reverse sm:flex-row">
+            <div className="flex">
 
 
                 <SideBar />
 
-
-                <div className="flex flex-col w-full h-[93vh] sm:h-screen bg-slate-500">
+                <div className="w-full text-slate-900">
                     {children}
                 </div>
             </div>
