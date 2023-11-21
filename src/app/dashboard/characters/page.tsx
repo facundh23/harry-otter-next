@@ -2,19 +2,11 @@ import { CharacterGrid } from "@/characters/components/CharacterGrid";
 import { PotterCharacters } from "@/characters/interfaces/characters";
 
 
-
-
-
-
-
 const getCharacters = async (): Promise<PotterCharacters[]> => {
-
-
     const data = await fetch('https://hp-api.onrender.com/api/characters')
         .then(resp => resp.json())
 
     return data
-
 }
 
 

@@ -5,9 +5,7 @@ interface Props {
     characters: PotterCharacters[]
 }
 
-type PotterCharacter = {
-    character: PotterCharacter
-}
+
 
 export const CharacterGrid = ({ characters }: Props) => {
     return (

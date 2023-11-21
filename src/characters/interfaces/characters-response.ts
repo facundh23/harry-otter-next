@@ -3,6 +3,6 @@ export interface CharactersResponse {
 }
 
 export interface Result {
-  name: string;
+  id: string;
   url: string;
 }
