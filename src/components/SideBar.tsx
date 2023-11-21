@@ -26,12 +26,12 @@ export const SideBar = () => {
 
         <div
             id="sidebar"
-            style={{ width: '400px' }}
-            className=" bg-gray-900 h-12 fixed bottom-0 min-w-full flex items-center justify-center sm:min-h-screen z-10 text-slate-300 sm:w-64 sm:left-0 sm:flex sm:flex-col sm:justify-center sm:items-center"
+            className="hidden bg-gray-900  z-10 text-slate-300 md:w-[25%] md:left-0 md:flex md:flex-col items-center p-4"
             x-show="sidenav"
         >
+            <Image src={'/assets/images/logo.jpg'} width={80} height={80} alt={"Logo Image"} className="hidden md:w-[20%] md:mb-2 md:block" />
 
-            <Image src={'/assets/images/logo.jpg'} width={100} height={80} alt={"Logo Image"} className="hidden md:w-[60%] md:mb-2 md:block" />
+
             <div id="menu" className="flex justify-around items-center w-60 sm:h-full sm:flex-col gap-2 sm:justify-start sm:w-full">
 
                 {

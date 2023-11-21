@@ -1,11 +1,8 @@
 import { PotterCharacters } from "../interfaces/characters"
 import CharacterCard from "./CharacterCard"
 
-
-
 interface Props {
     characters: PotterCharacters[]
-
 }
 
 type PotterCharacter = {
@@ -14,11 +11,12 @@ type PotterCharacter = {
 
 export const CharacterGrid = ({ characters }: Props) => {
     return (
-        <div className="flex flex-wrap gap-10 items-center justify-center">
+        <div className="md:flex md:flex-wrap md:w-[100%] h-screen md:justify-center overflo-y-scroll">
 
             {
                 characters.map(character => (
-                    <CharacterCard key={character.id} character={character} />
+                    character.image ? <CharacterCard key={character.id} character={character} /> : ''
+
                 ))
             }
 

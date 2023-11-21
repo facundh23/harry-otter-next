@@ -23,8 +23,7 @@ export default async function CharactersPage() {
     const characters = await getCharacters();
 
     return (
-        <div className="flex flex-col items-center">
-            <h1 className="text-3xl font-bold">Characters</h1>
+        <div className=" bg-slate-400 flex flex-col items-center h-min-screen md:flex-row md:w-full md:gap-10  md:flex-wrap md:items-center justify-center p-6">
             <CharacterGrid characters={characters} />
         </div >
     );
