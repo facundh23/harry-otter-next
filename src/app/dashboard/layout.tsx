@@ -9,12 +9,11 @@ export default function DashBoardLayout({
     return (
         <div className="flex flex-col-reverse sm:w-full md:h-min-screen ">
 
-            <div className="flex sm:flex-row">
+            <div className="flex flex-col-reverse sm:flex-row">
                 <SideBar />
                 <div className="w-full text-slate-900">
                     {children}
                 </div>
-
             </div>
         </div>
     );

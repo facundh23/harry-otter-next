@@ -14,12 +14,13 @@ const CharacterCard = ({ character }: Props) => {
 
     return (
 
-        <div className="p-4">
+        <div className="p-4 flex flex-col w-64">
             <Image alt="gallery" width={200} height={100} src={image} />
-            <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex flex-col items-center">
-                <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">{name}</h2>
-                <p className="leading-relaxed">{house}</p>
-                <Link href={`character/${id}`} className="bg-green-400 p-4 rounded-xl">More Info</Link>
+            <div className="flex flex-col items-center text-white">
+                <h2 className="">{name}</h2>
+                <p className="">{house}</p>
+                <Link href={`character/${id}`} className="font-bold underline w-40 text-center bg-red-400 p-2 rounded-lg :hover:cursor-pointer hover:bg-blue-400 transition-all duration-300">More Info</Link>
+
             </div>
         </div>
 
