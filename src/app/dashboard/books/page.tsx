@@ -10,7 +10,7 @@ const getBooks = async (): Promise<BooksProps[]> => {
 export default async function BooksPage() {
     const books = await getBooks();
     return (
-        <div className=" bg-slate-400 flex flex-col items-center h-min-screen md:flex-row md:w-full md:gap-10  md:flex-wrap md:items-center justify-center p-6">
+        <div className=" bg-gray-900 flex flex-col items-center h-min-screen md:flex-row md:w-full md:gap-10  md:flex-wrap md:items-center justify-center p-6">
             <BookData books={books} />
         </div >
     );

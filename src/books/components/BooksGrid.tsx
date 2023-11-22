@@ -9,7 +9,7 @@ interface Props {
 export const BookData = ({ books }: Props) => {
 
     return (
-        <div className="md:flex md:flex-wrap md:w-[100%] min-h-screen md:justify-center overflow-y-scroll">
+        <div className="md:flex md:flex-wrap md:w-full md:min-h-screen md:justify-center bg-gray-900">
 
             {
                 books.map(book => (

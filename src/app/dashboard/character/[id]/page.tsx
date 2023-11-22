@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation"
 import Image from 'next/image'
-
-import { IoArrowRedoSharp, IoBalloonSharp } from "react-icons/io5";
+import { IoArrowRedoSharp } from "react-icons/io5";
 import Link from "next/link";
 
 
@@ -60,10 +59,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const getCharacterById = async (id: string): Promise<Character> => {
     try {
-        const character = await fetch(`https://hp-api.onrender.com/api/character/${id}`)
-            .then(resp => resp.json());
+        const character = await fetch(`https://hp-api.onrender.com/api/character/${id}`, {
+            cache: 'force-cache'
+        })
+            .then(resp => resp.json())
 
-        return character[0];
+        return character[0]
+
     } catch (error) {
         notFound()
     }
@@ -72,16 +74,16 @@ const getCharacterById = async (id: string): Promise<Character> => {
 
 export default async function CharacterPage({ params }: Props) {
 
-    const character = await getCharacterById(params.id);
-    const { name, house, patronus, actor } = character;
+    const character = await getCharacterById(params.id)!;
+
 
     return (
-        <div className="flex flex-col items-center bg-slate-400 w-screen h-screen p-2">
-            <Image src={character.image} width={250} height={100} alt={name} className="rounded-md" />
-            <p className="font-bold text-2xl flex mt-2 ml-2"> <IoArrowRedoSharp /> <span className="text-gray-800">Name - {name}</span></p>
-            {house && <p className="font-bold text-2xl flex mt-2 ml-2"> <IoArrowRedoSharp /> <span className="text-gray-800">House - {house}</span></p>}
-            {patronus && <p className="font-bold text-2xl flex mt-2 ml-2"> <IoArrowRedoSharp /> <span className="text-gray-800">Patronus -  {patronus}</span></p>}
-            {actor && <p className="font-bold text-2xl flex mt-2 ml-2"> <IoArrowRedoSharp /> <span className="text-gray-800">Actor  -  {actor}</span></p>}
+        <div className="flex flex-col items-center w-full h-screen p-2 bg-gray-900">
+            <Image src={character?.image ?? ''} width={250} height={100} alt={character?.name} className="rounded-md" />
+            <p className="font-bold text-2xl flex mt-2 ml-2 text-white"> <IoArrowRedoSharp /> <span className="text-white">Name - {character?.name}</span></p>
+            {character?.house && <p className="font-bold text-2xl flex mt-2 ml-2 text-white"> <IoArrowRedoSharp /> <span className="text-white">House - {character?.house}</span></p>}
+            {character?.patronus && <p className="font-bold text-2xl flex mt-2 ml-2 text-white"> <IoArrowRedoSharp /> <span className="text-white">Patronus -  {character?.patronus}</span></p>}
+            {character?.actor && <p className="font-bold text-2xl flex mt-2 ml-2 text-white"> <IoArrowRedoSharp /> <span className="text-white">Actor  -  {character?.actor}</span></p>}
 
 
             <Link href={'/dashboard/characters'} className="font-bold w-40 bg-red-400 text-center mt-2 p-2 rounded-lg hover:cursor-pointer hover:bg-blue-400 trannsition-all duration-500">Go Home</Link>
