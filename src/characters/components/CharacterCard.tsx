@@ -2,6 +2,7 @@
 import Image from "next/image"
 
 import { PotterCharacters } from "../interfaces/characters"
+import Link from "next/link"
 
 
 interface Props {
@@ -9,7 +10,8 @@ interface Props {
 }
 
 const CharacterCard = ({ character }: Props) => {
-    const { id, gender, name, image, house } = character
+    const { id, name, image, house } = character
+
     return (
 
         <div className="p-4">
@@ -17,6 +19,7 @@ const CharacterCard = ({ character }: Props) => {
             <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100 flex flex-col items-center">
                 <h2 className="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">{name}</h2>
                 <p className="leading-relaxed">{house}</p>
+                <Link href={`character/${id}`} className="bg-green-400 p-4 rounded-xl">More Info</Link>
             </div>
         </div>
 
