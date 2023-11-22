@@ -26,7 +26,7 @@ export const SideBar = () => {
 
         <div
             id="sidebar"
-            className="  bg-gray-900 flex justify-center z-10  text-slate-300 sm:w-[30%] sm:left-0 sm:flex sm:flex-col sm:justify-start p-4 "
+            className="  bg-gray-900 flex justify-center z-10  text-slate-300 sm:w-[20%] sm:left-0 sm:flex sm:flex-col sm:justify-start p-4 "
             x-show="sidenav"
         >
             <Image src={'/assets/images/logo.jpg'} width={80} height={80} alt={"Logo Image"} className="hidden md:w-[40%] md:mb-2 md:block md:mx-auto" />

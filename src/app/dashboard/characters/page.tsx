@@ -15,7 +15,7 @@ export default async function CharactersPage() {
     const characters = await getCharacters();
 
     return (
-        <div className=" flex flex-col items-center h-min-screen md:flex-row md:w-full md:gap-10 md:flex-wrap md:items-center md:justify-center  bg-gray-700">
+        <div className=" flex flex-col items-center  sm:flex-row  md:gap-10 md:flex-wrap md:items-center md:justify-center  bg-gray-700">
             <CharacterGrid characters={characters} />
         </div >
     );

@@ -9,7 +9,7 @@ interface Props {
 
 export const CharacterGrid = ({ characters }: Props) => {
     return (
-        <div className="md:flex md:flex-wrap md:min-h-screen md:justify-center overflo-y-scroll bg-gray-700">
+        <div className="flex flex-col min-h-screen md:flex-row md:flex-wrap md:justify-center overflow-y-scroll bg-gray-700">
 
             {
                 characters.map(character => (
